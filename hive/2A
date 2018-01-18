@@ -1,0 +1,7 @@
+2a)
+select worksite, count(worksite) as count from h1b_final where job_title like "%DATA ENGINEER%" and year=2011 and case_status= 'CERTIFIED' group by worksite order by count  desc limit 1;
+select worksite, count(worksite) as count from h1b_final where job_title like "%DATA ENGINEER%" and year=2012 case_status= 'CERTIFIED' group by worksite order by count desc limit 1;
+select worksite, count(worksite) as count from h1b_final where job_title like "%DATA ENGINEER%" and year=2013  case_status= 'CERTIFIED' group by worksite order by count desc limit 1;
+select worksite, count(worksite) as count from h1b_final where job_title like "%DATA ENGINEER%" and year=2014 case_status= 'CERTIFIED' group by worksite order by count desc limit 1;
+select worksite, count(worksite) as count from h1b_final where job_title like "%DATA ENGINEER%" and year=2015 case_status= 'CERTIFIED' group by worksite order by count desc limit 1;
+select worksite, count(worksite) as count from h1b_final where job_title like "%DATA ENGINEER%" and year=2016 case_status= 'CERTIFIED' group by worksite order by count desc limit 1;

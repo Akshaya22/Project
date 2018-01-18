@@ -1,0 +1,6 @@
+select worksite, year, count(*) total from h1b_final where case_status='CERTIFIED' and year='2011' group by year, worksite order by total desc limit 5;
+select worksite, year, count(*) total from h1b_final where case_status='CERTIFIED' and year='2012' group by year, worksite order by total desc limit 5;
+select worksite, year, count(*) total from h1b_final where case_status='CERTIFIED' and year='2013' group by year, worksite order by total desc limit 5;
+select worksite, year, count(*) total from h1b_final where case_status='CERTIFIED' and year='2014' group by year, worksite order by total desc limit 5;
+select worksite, year, count(*) total from h1b_final where case_status='CERTIFIED' and year='2015' group by year, worksite order by total desc limit 5;
+select worksite, year, count(*) total from h1b_final where case_status='CERTIFIED' and year='2016' group by year, worksite order by total desc limit 5;

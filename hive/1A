@@ -1,0 +1,8 @@
+1a) 
+create table dataeng(year int, count int)
+row format delimited
+fields terminated by ','
+stored as textfile;
+insert overwrite table dataeng
+select year, count(job_title) from h1b_final where job_title="DATA ENGINEER" group by year;
+select year, count, (100 * (count - lag(count,1)over(order by year)) / lag(count,1)over(order by year)) as percen from dataeng;

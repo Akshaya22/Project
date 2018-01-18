@@ -1,0 +1,1 @@
+3) select soc_name, count(*) as total from h1b_final where job_title like "%DATA SCIENTIST%" and case_status like "%CERTIFIED%" group by soc_name order by total desc limit 1;
