@@ -1,0 +1,636 @@
+drop database project;
+
+create database if not exists project;
+
+use project;
+
+create table ten(job_title varchar(255),petitions double);
+
+sqoop export --connect jdbc:mysql://localhost/project --username root --password terminated --table ten --update-mode allowinsert --export-dir /niit/ten/part-r-00000 --input-fields-terminated-by '\t'
+
+
+select * from ten;
++------------------------------------------------------------+-----------+
+| job_title                                                  | petitions |
++------------------------------------------------------------+-----------+
+| DATA ANALYST                                               |      3805 |
+| DATA SCIENTIST                                             |      1932 |
+| DATA WAREHOUSE SPECIALIST                                  |      1631 |
+| DATABASE ADMINISTRATOR                                     |     16665 |
+| DATABASE ANALYST                                           |      1050 |
+| DATABASE DEVELOPER                                         |      1155 |
+| DENTIST                                                    |      3250 |
+| DESIGN ENGINEER                                            |      6325 |
+| DESIGNER                                                   |      1992 |
+| DEVELOPER                                                  |     12909 |
+| DEVELOPER USER INTERFACE                                   |      5247 |
+| DIRECTOR                                                   |      1333 |
+| ELECTRICAL ENGINEER                                        |      4174 |
+| ELECTRONICS ENGINEER                                       |      1060 |
+| ELEMENTARY BILINGUAL TEACHER                               |      2088 |
+| ELEMENTARY SCHOOL TEACHER                                  |      1304 |
+| ENGINEER                                                   |      4941 |
+| ENGINEER II                                                |      1249 |
+| ENGINEERING MANAGER                                        |      1199 |
+| ERS CONSULTANT                                             |      2170 |
+| ERS SENIOR CONSULTANT                                      |      2249 |
+| ETL DEVELOPER                                              |      1841 |
+| FINANCIAL ANALYST                                          |      8515 |
+| FINANCIAL MANAGER                                          |      1080 |
+| FUNCTIONAL CONSULTANT                                      |      1115 |
+| GENERAL MANAGER                                            |      1348 |
+| GRAPHIC DESIGNER                                           |      5020 |
+| HARDWARE ENGINEER                                          |      2556 |
+| HOSPITALIST                                                |      4387 |
+| HOSPITALIST PHYSICIAN                                      |      4067 |
+| INDUSTRIAL DESIGNER                                        |      3619 |
+| INDUSTRIAL ENGINEER                                        |      2093 |
+| INSTRUCTOR                                                 |      3014 |
+| INTERIOR DESIGNER                                          |      1361 |
+| IT CONSULTANT                                              |      3497 |
+| IT PROJECT MANAGER                                         |      2473 |
+| IT SPECIALIST                                              |      2585 |
+| JAVA DEVELOPER                                             |      7596 |
+| LAW CLERK                                                  |      1709 |
+| LEAD CONSULTANT                                            |      2169 |
+| LEAD CONSULTANT - US                                       |      3402 |
+| LEAD DEVELOPER                                             |      1049 |
+| LEAD ENGINEER                                              |     11157 |
+| LEAD SOFTWARE ENGINEER                                     |      1572 |
+| LECTURER                                                   |      2257 |
+| MANAGEMENT ANALYST                                         |      5386 |
+| MANAGER                                                    |      8561 |
+| MANAGER JC50                                               |      1874 |
+| MANAGING CONSULTANT                                        |      3873 |
+| MANUFACTURING ENGINEER                                     |      1906 |
+| MARKET RESEARCH ANALYST                                    |      8934 |
+| MARKETING ANALYST                                          |      1573 |
+| MARKETING MANAGER                                          |      2230 |
+| MARKETING SPECIALIST                                       |      2150 |
+| MECHANICAL ENGINEER                                        |      7301 |
+| MEDICAL RESIDENT                                           |      2336 |
+| MEDICAL TECHNOLOGIST                                       |      3125 |
+| MEMBER OF TECHNICAL STAFF                                  |      1774 |
+| MODULE LEAD                                                |      2226 |
+| NEPHROLOGIST                                               |      1027 |
+| NETWORK ADMINISTRATOR                                      |      2624 |
+| NETWORK AND COMPUTER SYSTEMS ADMINISTRATOR                 |      1928 |
+| NETWORK ENGINEER                                           |      5422 |
+| OCCUPATIONAL THERAPIST                                     |      4437 |
+| OPERATIONS MANAGER                                         |      1785 |
+| OPERATIONS RESEARCH ANALYST                                |      1946 |
+| ORACLE DATABASE ADMINISTRATOR                              |      1527 |
+| PEDIATRICIAN                                               |      1214 |
+| PHARMACIST                                                 |      5864 |
+| PHYSICAL THERAPIST                                         |     20207 |
+| PHYSICIAN                                                  |      4417 |
+| PHYSICIAN IN A POST GRADUATE TRAINING PROGRAM              |      2421 |
+| POST DOCTORAL FELLOW                                       |      1507 |
+| POSTDOCTORAL ASSOCIATE                                     |      5145 |
+| POSTDOCTORAL FELLOW                                        |      7857 |
+| POSTDOCTORAL RESEARCH ASSOCIATE                            |      6041 |
+| POSTDOCTORAL RESEARCH FELLOW                               |      2346 |
+| POSTDOCTORAL RESEARCHER                                    |      2130 |
+| POSTDOCTORAL SCHOLAR                                       |      3186 |
+| PRINCIPAL CONSULTANT                                       |      1836 |
+| PRINCIPAL CONSULTANT - US                                  |      1352 |
+| PRINCIPAL ENGINEER                                         |      1066 |
+| PRINCIPAL SOFTWARE ENGINEER                                |      2257 |
+| PROCESS ENGINEER                                           |      4377 |
+| SOFTWARE DEVELOPER                                         |     42907 |
+| SOFTWARE DEVELOPER, APPLICATIONS                           |      1830 |
+| SOFTWARE DEVELOPERS, APPLICATIONS                          |      1195 |
+| SOFTWARE DEVELOPMENT ENGINEER                              |      7284 |
+| SOFTWARE DEVELOPMENT ENGINEER I                            |      2128 |
+| SOFTWARE DEVELOPMENT ENGINEER II                           |      3274 |
+| SOFTWARE DEVELOPMENT ENGINEER IN TEST                      |      4258 |
+| SOFTWARE ENGINEER                                          |    121307 |
+| SOFTWARE ENGINEER & TESTER                                 |      1538 |
+| SOFTWARE ENGINEER 2                                        |      4166 |
+| SOFTWARE ENGINEER 3                                        |      1891 |
+| SOFTWARE ENGINEER AND TESTER                               |      1216 |
+| SOFTWARE ENGINEER II                                       |      2051 |
+| SOFTWARE ENGINEER III                                      |      1328 |
+| SOFTWARE PROGRAMMER                                        |      3577 |
+| SOFTWARE QA ANALYST                                        |      1112 |
+| SOFTWARE QA ENGINEER                                       |      1169 |
+| SOFTWARE QUALITY ASSURANCE ENGINEER                        |      4920 |
+| SOFTWARE QUALITY ASSURANCE ENGINEER AND TESTER             |      1568 |
+| SOFTWARE TEST ENGINEER                                     |      3591 |
+| SOLUTION ARCHITECT                                         |      1994 |
+| SOLUTIONS ARCHITECT                                        |      1915 |
+| SPECIAL EDUCATION TEACHER                                  |      1721 |
+| SPECIALIST MASTER                                          |      1119 |
+| SPECIALIST SENIOR                                          |      1447 |
+| SPEECH LANGUAGE PATHOLOGIST                                |      1381 |
+| SR. PROGRAMMER ANALYST                                     |      3716 |
+| SR. SOFTWARE DEVELOPER                                     |      1161 |
+| SR. SOFTWARE ENGINEER                                      |      4863 |
+| SR. SYSTEMS ANALYST                                        |      1151 |
+| STAFF ACCOUNTANT                                           |      4491 |
+| STAFF ENGINEER                                             |      1869 |
+| STAFF SCIENTIST                                            |      1242 |
+| STAFF SOFTWARE ENGINEER                                    |      2976 |
+| STRUCTURAL ENGINEER                                        |      1094 |
+| SYSTEM ADMINISTRATOR                                       |      5048 |
+| SYSTEM ANALYST                                             |      4684 |
+| SYSTEM ANALYST JC65                                        |      1419 |
+| SYSTEM ENGINEER                                            |      2145 |
+| SYSTEMS ADMINISTRATOR                                      |      6659 |
+| SYSTEMS ANALYST                                            |     61965 |
+| SYSTEMS ANALYST - II                                       |      1339 |
+| SYSTEMS ANALYST - III                                      |      1006 |
+| SYSTEMS ANALYST II                                         |      1036 |
+| SYSTEMS ANALYST JC65                                       |      3321 |
+| SYSTEMS ANALYSTS                                           |      1252 |
+| SYSTEMS ENGINEER                                           |      8078 |
+| SYSTEMS ENGINEER - US                                      |     10036 |
+| TAX SENIOR                                                 |      1838 |
+| TEACHER                                                    |      3576 |
+| TECHNICAL ANALYST                                          |      2932 |
+| TECHNICAL ARCHITECT                                        |      2908 |
+| TECHNICAL CONSULTANT                                       |      3420 |
+| TECHNICAL LEAD                                             |      5218 |
+| TECHNICAL MANAGER                                          |      1060 |
+| TECHNICAL PROJECT MANAGER                                  |      1052 |
+| TECHNICAL RECRUITER                                        |      1364 |
+| TECHNICAL SPECIALIST                                       |      1295 |
+| TECHNICAL SUPPORT ENGINEER                                 |      1230 |
+| TECHNICAL TEST LEAD - US                                   |      5374 |
+| TECHNOLOGY ANALYST - US                                    |     26055 |
+| TECHNOLOGY ARCHITECT - US                                  |      4707 |
+| TECHNOLOGY LEAD - US                                       |     28350 |
+| TEST ANALYST                                               |      1419 |
+| TEST ANALYST - US                                          |      4958 |
+| TEST CONSULTANT                                            |      1454 |
+| TEST ENGINEER                                              |      3936 |
+| TEST ENGINEER - US                                         |      2198 |
+| TEST ENGINEER LEVEL 1                                      |      1036 |
+| TEST ENGINEER LEVEL 2                                      |      2372 |
+| TEST LEAD                                                  |      1726 |
+| TEST SPECIALIST                                            |      1011 |
+| VALIDATION ENGINEER                                        |      1159 |
+| VICE PRESIDENT                                             |      3159 |
+| VISITING ASSISTANT PROFESSOR                               |      1311 |
+| WEB DEVELOPER                                              |      8024 |
+| PRODUCT ENGINEER                                           |      2634 |
+| PRODUCT MANAGER                                            |      3367 |
+| PRODUCTION SUPPORT ANALYST - US                            |      1451 |
+| PRODUCTION SUPPORT LEAD - US                               |      1301 |
+| PROGRAM MANAGER                                            |      3920 |
+| PROGRAMMER                                                 |      6011 |
+| PROGRAMMER / ANALYST                                       |      1173 |
+| PROGRAMMER ANALYST                                         |    249038 |
+| PROGRAMMER ANALYST - I                                     |      1432 |
+| PROGRAMMER ANALYST - II                                    |      3588 |
+| PROGRAMMER ANALYST II                                      |      1059 |
+| PROGRAMMER ANALYST LEVEL 1                                 |      2395 |
+| PROGRAMMER ANALYSTS                                        |      1133 |
+| PROGRAMMER/ ANALYST                                        |      1000 |
+| PROGRAMMER/ANALYST                                         |      9375 |
+| PROGRAMMER/DEVELOPER                                       |      1560 |
+| PROJECT ENGINEER                                           |      6439 |
+| PROJECT LEAD                                               |      2363 |
+| PROJECT MANAGER                                            |     20172 |
+| PROJECT MANAGER - III                                      |      1651 |
+| PROJECT MANAGER - US                                       |      7046 |
+| PSYCHIATRIST                                               |      1289 |
+| PUBLIC RELATIONS SPECIALIST                                |      1931 |
+| QA ANALYST                                                 |      6871 |
+| QA ENGINEER                                                |      2224 |
+| QA TESTER                                                  |      1170 |
+| QUALITY ANALYST                                            |      2616 |
+| QUALITY ASSURANCE ANALYST                                  |      7326 |
+| QUALITY ASSURANCE ENGINEER                                 |      3647 |
+| QUALITY ENGINEER                                           |      2381 |
+| QUANTITATIVE ANALYST                                       |      1293 |
+| RESEARCH ANALYST                                           |      1869 |
+| RESEARCH ASSISTANT                                         |      1777 |
+| RESEARCH ASSISTANT PROFESSOR                               |      1973 |
+| RESEARCH ASSOCIATE                                         |     13623 |
+| RESEARCH ENGINEER                                          |      1338 |
+| RESEARCH FELLOW                                            |      5981 |
+| RESEARCH SCIENTIST                                         |      5154 |
+| RESEARCHER                                                 |      1031 |
+| RESIDENT                                                   |      1245 |
+| RESIDENT PHYSICIAN                                         |      2119 |
+| RF ENGINEER                                                |      2794 |
+| SALES ENGINEER                                             |      2167 |
+| SALES MANAGER                                              |      1232 |
+| SAP CONSULTANT                                             |      3023 |
+| SCIENCE TEACHER                                            |      1127 |
+| SCIENTIST                                                  |      1340 |
+| SENIOR ANALYST                                             |      1646 |
+| SENIOR APPLICATION DEVELOPER                               |      1965 |
+| SENIOR ASSOCIATE                                           |      3540 |
+| SENIOR BUSINESS ANALYST                                    |      3402 |
+| SENIOR CONSULTANT                                          |     24904 |
+| SENIOR DATABASE ADMINISTRATOR                              |      1229 |
+| SENIOR DESIGN ENGINEER                                     |      1209 |
+| SENIOR DEVELOPER                                           |      2994 |
+| SENIOR ENGINEER                                            |      3773 |
+| SENIOR FINANCIAL ANALYST                                   |      1196 |
+| SENIOR HARDWARE ENGINEER                                   |      1653 |
+| SENIOR JAVA DEVELOPER                                      |      1395 |
+| SENIOR MANAGER                                             |      1439 |
+| SENIOR PRODUCT MANAGER                                     |      1085 |
+| SENIOR PROGRAMMER ANALYST                                  |      5810 |
+| SENIOR PROJECT MANAGER                                     |      1015 |
+| SENIOR PROJECT MANAGER - US                                |      2774 |
+| SENIOR RESEARCH ASSOCIATE                                  |      1015 |
+| SENIOR SOFTWARE DEVELOPER                                  |     10208 |
+| SENIOR SOFTWARE DEVELOPMENT ENGINEER                       |      1399 |
+| SENIOR SOFTWARE ENGINEER                                   |     27133 |
+| SENIOR SYSTEM ENGINEER                                     |      1408 |
+| SENIOR SYSTEMS ANALYST                                     |      5353 |
+| SENIOR SYSTEMS ANALYST JC60                                |      3069 |
+| SENIOR SYSTEMS ENGINEER                                    |      2030 |
+| SENIOR TECHNICAL CONSULTANT                                |      1882 |
+| SENIOR TECHNOLOGY ARCHITECT - US                           |      1417 |
+| SOFTWARE ANALYST                                           |      1072 |
+| SOFTWARE APPLICATION ENGINEER                              |      1126 |
+| SOFTWARE ARCHITECT                                         |      1878 |
+| SOFTWARE DESIGN ENGINEER                                   |      1080 |
+| .NET DEVELOPER                                             |      2921 |
+| ACCOUNT MANAGER                                            |      1066 |
+| ACCOUNTANT                                                 |     14048 |
+| ADVISORY MANAGER                                           |      3255 |
+| ADVISORY SENIOR                                            |      5416 |
+| ADVISORY SENIOR ASSOCIATE                                  |      1332 |
+| ADVISORY STAFF                                             |      2413 |
+| ANALYST                                                    |     11751 |
+| APPLICATION DEVELOPER                                      |      7692 |
+| APPLICATION ENGINEER                                       |      1458 |
+| APPLICATION PROGRAMMER                                     |      1686 |
+| APPLICATIONS CONSULTANT                                    |      1180 |
+| APPLICATIONS DEVELOPER                                     |      3366 |
+| APPLICATIONS ENGINEER                                      |      1688 |
+| ARCHITECT                                                  |      4982 |
+| ARCHITECT LEVEL 2                                          |      2892 |
+| ARCHITECTURAL DESIGNER                                     |      2334 |
+| ASSISTANT PROFESSOR                                        |     25265 |
+| ASSISTANT RESEARCH SCIENTIST                               |      1103 |
+| ASSISTANT VICE PRESIDENT                                   |      2132 |
+| ASSOCIATE                                                  |     12502 |
+| ASSOCIATE ATTORNEY                                         |      1533 |
+| ASSOCIATE CONSULTANT                                       |      1350 |
+| ASSOCIATE CONSULTANT - US                                  |      4393 |
+| ASSOCIATE PROFESSOR                                        |      1441 |
+| ASSOCIATE RESEARCH SCIENTIST                               |      1400 |
+| ASSOCIATE SOFTWARE ENGINEER                                |      1215 |
+| ASSURANCE SENIOR                                           |      1607 |
+| ASSURANCE STAFF                                            |      2334 |
+| ATTORNEY                                                   |      1050 |
+| AUDIT ASSISTANT                                            |      1205 |
+| AUDIT SENIOR                                               |      1070 |
+| BUDGET ANALYST                                             |      1687 |
+| BUSINESS ANALYST                                           |     39681 |
+| BUSINESS DEVELOPMENT ANALYST                               |      1148 |
+| BUSINESS DEVELOPMENT MANAGER                               |      2345 |
+| BUSINESS DEVELOPMENT SPECIALIST                            |      1482 |
+| BUSINESS INTELLIGENCE ANALYST                              |      1972 |
+| BUSINESS OPERATIONS SPECIALIST                             |      1034 |
+| BUSINESS SYSTEM ANALYST                                    |      4435 |
+| BUSINESS SYSTEMS ANALYST                                   |     10110 |
+| BUSINESS TECHNOLOGY ANALYST                                |      2005 |
+| CHEMIST                                                    |      1380 |
+| CHIEF EXECUTIVE OFFICER                                    |      1095 |
+| CIVIL ENGINEER                                             |      2257 |
+| CLINICAL ASSISTANT PROFESSOR                               |      1281 |
+| CLINICAL FELLOW                                            |      1146 |
+| COMPONENT DESIGN ENGINEER                                  |      2851 |
+| COMPUTER PROGRAMMER                                        |     70570 |
+| COMPUTER PROGRAMMER / CONFIGURER 2                         |      1276 |
+| COMPUTER PROGRAMMER ANALYST                                |     13634 |
+| COMPUTER PROGRAMMER/ANALYST                                |      1122 |
+| COMPUTER PROGRAMMER/CONFIGURER 2                           |      6729 |
+| COMPUTER PROGRAMMER/CONFIGURER 3                           |      1145 |
+| COMPUTER PROGRAMMERS                                       |      4963 |
+| COMPUTER SOFTWARE ENGINEER                                 |      2684 |
+| COMPUTER SOFTWARE ENGINEER, APPLICATIONS                   |      4426 |
+| COMPUTER SPECIALIST                                        |      2175 |
+| COMPUTER SPECIALIST/SYSTEM SUPPORT AND DEVELOPMENT         |      1339 |
+| COMPUTER SPECIALIST/SYSTEM SUPPORT AND DEVELOPMENT ADMIN 2 |      1085 |
+| COMPUTER SPECIALIST/TESTING AND QUALITY ANALYST 2          |      3998 |
+| COMPUTER SYSTEM ANALYST                                    |      3753 |
+| COMPUTER SYSTEMS ANALYST                                   |     35086 |
+| COMPUTER SYSTEMS ANALYST 2                                 |      4031 |
+| COMPUTER SYSTEMS ANALYST 3                                 |      2170 |
+| COMPUTER SYSTEMS ANALYSTS                                  |      4728 |
+| COMPUTER SYSTEMS ENGINEER                                  |     11090 |
+| COMPUTER SYSTEMS ENGINEER/ARCHITECT                        |      2067 |
+| CONSULTANT                                                 |     23081 |
+| CONSULTANT - US                                            |      7426 |
+| CONSULTANT LEVEL 3                                         |      1171 |
+| PRODUCT ENGINEER                                           |      2634 |
+| DATA ANALYST                                               |      3805 |
+| SOFTWARE DEVELOPER                                         |     42907 |
+| PRODUCT MANAGER                                            |      3367 |
+| PRODUCTION SUPPORT ANALYST - US                            |      1451 |
+| PRODUCTION SUPPORT LEAD - US                               |      1301 |
+| PROGRAM MANAGER                                            |      3920 |
+| PROGRAMMER                                                 |      6011 |
+| PROGRAMMER / ANALYST                                       |      1173 |
+| PROGRAMMER ANALYST                                         |    249038 |
+| PROGRAMMER ANALYST - I                                     |      1432 |
+| PROGRAMMER ANALYST - II                                    |      3588 |
+| PROGRAMMER ANALYST II                                      |      1059 |
+| PROGRAMMER ANALYST LEVEL 1                                 |      2395 |
+| PROGRAMMER ANALYSTS                                        |      1133 |
+| PROGRAMMER/ ANALYST                                        |      1000 |
+| PROGRAMMER/ANALYST                                         |      9375 |
+| PROGRAMMER/DEVELOPER                                       |      1560 |
+| PROJECT ENGINEER                                           |      6439 |
+| PROJECT LEAD                                               |      2363 |
+| PROJECT MANAGER                                            |     20172 |
+| PROJECT MANAGER - III                                      |      1651 |
+| PROJECT MANAGER - US                                       |      7046 |
+| PSYCHIATRIST                                               |      1289 |
+| PUBLIC RELATIONS SPECIALIST                                |      1931 |
+| QA ANALYST                                                 |      6871 |
+| QA ENGINEER                                                |      2224 |
+| QA TESTER                                                  |      1170 |
+| QUALITY ANALYST                                            |      2616 |
+| QUALITY ASSURANCE ANALYST                                  |      7326 |
+| QUALITY ASSURANCE ENGINEER                                 |      3647 |
+| QUALITY ENGINEER                                           |      2381 |
+| QUANTITATIVE ANALYST                                       |      1293 |
+| RESEARCH ANALYST                                           |      1869 |
+| RESEARCH ASSISTANT                                         |      1777 |
+| RESEARCH ASSISTANT PROFESSOR                               |      1973 |
+| RESEARCH ASSOCIATE                                         |     13623 |
+| RESEARCH ENGINEER                                          |      1338 |
+| RESEARCH FELLOW                                            |      5981 |
+| .NET DEVELOPER                                             |      2921 |
+| DATA SCIENTIST                                             |      1932 |
+| DATA WAREHOUSE SPECIALIST                                  |      1631 |
+| DATABASE ADMINISTRATOR                                     |     16665 |
+| DATABASE ANALYST                                           |      1050 |
+| DATABASE DEVELOPER                                         |      1155 |
+| DENTIST                                                    |      3250 |
+| DESIGN ENGINEER                                            |      6325 |
+| DESIGNER                                                   |      1992 |
+| DEVELOPER                                                  |     12909 |
+| DEVELOPER USER INTERFACE                                   |      5247 |
+| DIRECTOR                                                   |      1333 |
+| ELECTRICAL ENGINEER                                        |      4174 |
+| ELECTRONICS ENGINEER                                       |      1060 |
+| ELEMENTARY BILINGUAL TEACHER                               |      2088 |
+| ELEMENTARY SCHOOL TEACHER                                  |      1304 |
+| ENGINEER                                                   |      4941 |
+| ENGINEER II                                                |      1249 |
+| ENGINEERING MANAGER                                        |      1199 |
+| ERS CONSULTANT                                             |      2170 |
+| ERS SENIOR CONSULTANT                                      |      2249 |
+| ETL DEVELOPER                                              |      1841 |
+| FINANCIAL ANALYST                                          |      8515 |
+| FINANCIAL MANAGER                                          |      1080 |
+| FUNCTIONAL CONSULTANT                                      |      1115 |
+| GENERAL MANAGER                                            |      1348 |
+| GRAPHIC DESIGNER                                           |      5020 |
+| HARDWARE ENGINEER                                          |      2556 |
+| HOSPITALIST                                                |      4387 |
+| HOSPITALIST PHYSICIAN                                      |      4067 |
+| INDUSTRIAL DESIGNER                                        |      3619 |
+| INDUSTRIAL ENGINEER                                        |      2093 |
+| INSTRUCTOR                                                 |      3014 |
+| INTERIOR DESIGNER                                          |      1361 |
+| IT CONSULTANT                                              |      3497 |
+| IT PROJECT MANAGER                                         |      2473 |
+| IT SPECIALIST                                              |      2585 |
+| JAVA DEVELOPER                                             |      7596 |
+| LAW CLERK                                                  |      1709 |
+| LEAD CONSULTANT                                            |      2169 |
+| LEAD CONSULTANT - US                                       |      3402 |
+| LEAD DEVELOPER                                             |      1049 |
+| LEAD ENGINEER                                              |     11157 |
+| LEAD SOFTWARE ENGINEER                                     |      1572 |
+| LECTURER                                                   |      2257 |
+| MANAGEMENT ANALYST                                         |      5386 |
+| MANAGER                                                    |      8561 |
+| MANAGER JC50                                               |      1874 |
+| MANAGING CONSULTANT                                        |      3873 |
+| MANUFACTURING ENGINEER                                     |      1906 |
+| MARKET RESEARCH ANALYST                                    |      8934 |
+| MARKETING ANALYST                                          |      1573 |
+| MARKETING MANAGER                                          |      2230 |
+| MARKETING SPECIALIST                                       |      2150 |
+| MECHANICAL ENGINEER                                        |      7301 |
+| MEDICAL RESIDENT                                           |      2336 |
+| MEDICAL TECHNOLOGIST                                       |      3125 |
+| MEMBER OF TECHNICAL STAFF                                  |      1774 |
+| MODULE LEAD                                                |      2226 |
+| NEPHROLOGIST                                               |      1027 |
+| NETWORK ADMINISTRATOR                                      |      2624 |
+| NETWORK AND COMPUTER SYSTEMS ADMINISTRATOR                 |      1928 |
+| NETWORK ENGINEER                                           |      5422 |
+| OCCUPATIONAL THERAPIST                                     |      4437 |
+| OPERATIONS MANAGER                                         |      1785 |
+| OPERATIONS RESEARCH ANALYST                                |      1946 |
+| ORACLE DATABASE ADMINISTRATOR                              |      1527 |
+| PEDIATRICIAN                                               |      1214 |
+| PHARMACIST                                                 |      5864 |
+| PHYSICAL THERAPIST                                         |     20207 |
+| PHYSICIAN                                                  |      4417 |
+| PHYSICIAN IN A POST GRADUATE TRAINING PROGRAM              |      2421 |
+| POST DOCTORAL FELLOW                                       |      1507 |
+| POSTDOCTORAL ASSOCIATE                                     |      5145 |
+| POSTDOCTORAL FELLOW                                        |      7857 |
+| POSTDOCTORAL RESEARCH ASSOCIATE                            |      6041 |
+| POSTDOCTORAL RESEARCH FELLOW                               |      2346 |
+| POSTDOCTORAL RESEARCHER                                    |      2130 |
+| SOFTWARE DEVELOPER, APPLICATIONS                           |      1830 |
+| RESEARCH SCIENTIST                                         |      5154 |
+| POSTDOCTORAL SCHOLAR                                       |      3186 |
+| PRINCIPAL CONSULTANT                                       |      1836 |
+| SOFTWARE DEVELOPERS, APPLICATIONS                          |      1195 |
+| SOFTWARE DEVELOPMENT ENGINEER                              |      7284 |
+| SOFTWARE DEVELOPMENT ENGINEER I                            |      2128 |
+| SOFTWARE DEVELOPMENT ENGINEER II                           |      3274 |
+| SOFTWARE DEVELOPMENT ENGINEER IN TEST                      |      4258 |
+| SOFTWARE ENGINEER                                          |    121307 |
+| SOFTWARE ENGINEER & TESTER                                 |      1538 |
+| SOFTWARE ENGINEER 2                                        |      4166 |
+| SOFTWARE ENGINEER 3                                        |      1891 |
+| SOFTWARE ENGINEER AND TESTER                               |      1216 |
+| SOFTWARE ENGINEER II                                       |      2051 |
+| SOFTWARE ENGINEER III                                      |      1328 |
+| SOFTWARE PROGRAMMER                                        |      3577 |
+| SOFTWARE QA ANALYST                                        |      1112 |
+| SOFTWARE QA ENGINEER                                       |      1169 |
+| SOFTWARE QUALITY ASSURANCE ENGINEER                        |      4920 |
+| SOFTWARE QUALITY ASSURANCE ENGINEER AND TESTER             |      1568 |
+| SOFTWARE TEST ENGINEER                                     |      3591 |
+| SOLUTION ARCHITECT                                         |      1994 |
+| SOLUTIONS ARCHITECT                                        |      1915 |
+| SPECIAL EDUCATION TEACHER                                  |      1721 |
+| SPECIALIST MASTER                                          |      1119 |
+| SPECIALIST SENIOR                                          |      1447 |
+| SPEECH LANGUAGE PATHOLOGIST                                |      1381 |
+| SR. PROGRAMMER ANALYST                                     |      3716 |
+| SR. SOFTWARE DEVELOPER                                     |      1161 |
+| SR. SOFTWARE ENGINEER                                      |      4863 |
+| SR. SYSTEMS ANALYST                                        |      1151 |
+| STAFF ACCOUNTANT                                           |      4491 |
+| STAFF ENGINEER                                             |      1869 |
+| STAFF SCIENTIST                                            |      1242 |
+| STAFF SOFTWARE ENGINEER                                    |      2976 |
+| STRUCTURAL ENGINEER                                        |      1094 |
+| SYSTEM ADMINISTRATOR                                       |      5048 |
+| SYSTEM ANALYST                                             |      4684 |
+| SYSTEM ANALYST JC65                                        |      1419 |
+| SYSTEM ENGINEER                                            |      2145 |
+| SYSTEMS ADMINISTRATOR                                      |      6659 |
+| SYSTEMS ANALYST                                            |     61965 |
+| SYSTEMS ANALYST - II                                       |      1339 |
+| SYSTEMS ANALYST - III                                      |      1006 |
+| SYSTEMS ANALYST II                                         |      1036 |
+| SYSTEMS ANALYST JC65                                       |      3321 |
+| SYSTEMS ANALYSTS                                           |      1252 |
+| SYSTEMS ENGINEER                                           |      8078 |
+| RESEARCHER                                                 |      1031 |
+| RESIDENT                                                   |      1245 |
+| RESIDENT PHYSICIAN                                         |      2119 |
+| RF ENGINEER                                                |      2794 |
+| SALES ENGINEER                                             |      2167 |
+| SALES MANAGER                                              |      1232 |
+| SAP CONSULTANT                                             |      3023 |
+| SCIENCE TEACHER                                            |      1127 |
+| SCIENTIST                                                  |      1340 |
+| SENIOR ANALYST                                             |      1646 |
+| SENIOR APPLICATION DEVELOPER                               |      1965 |
+| SENIOR ASSOCIATE                                           |      3540 |
+| SENIOR BUSINESS ANALYST                                    |      3402 |
+| SENIOR CONSULTANT                                          |     24904 |
+| SENIOR DATABASE ADMINISTRATOR                              |      1229 |
+| SENIOR DESIGN ENGINEER                                     |      1209 |
+| SENIOR DEVELOPER                                           |      2994 |
+| SENIOR ENGINEER                                            |      3773 |
+| SENIOR FINANCIAL ANALYST                                   |      1196 |
+| SENIOR HARDWARE ENGINEER                                   |      1653 |
+| SENIOR JAVA DEVELOPER                                      |      1395 |
+| SENIOR MANAGER                                             |      1439 |
+| SENIOR PRODUCT MANAGER                                     |      1085 |
+| SENIOR PROGRAMMER ANALYST                                  |      5810 |
+| SENIOR PROJECT MANAGER                                     |      1015 |
+| SENIOR PROJECT MANAGER - US                                |      2774 |
+| SENIOR RESEARCH ASSOCIATE                                  |      1015 |
+| SENIOR SOFTWARE DEVELOPER                                  |     10208 |
+| SENIOR SOFTWARE DEVELOPMENT ENGINEER                       |      1399 |
+| SENIOR SOFTWARE ENGINEER                                   |     27133 |
+| SENIOR SYSTEM ENGINEER                                     |      1408 |
+| SENIOR SYSTEMS ANALYST                                     |      5353 |
+| SENIOR SYSTEMS ANALYST JC60                                |      3069 |
+| SENIOR SYSTEMS ENGINEER                                    |      2030 |
+| SENIOR TECHNICAL CONSULTANT                                |      1882 |
+| SENIOR TECHNOLOGY ARCHITECT - US                           |      1417 |
+| SOFTWARE ANALYST                                           |      1072 |
+| SOFTWARE APPLICATION ENGINEER                              |      1126 |
+| SOFTWARE ARCHITECT                                         |      1878 |
+| SOFTWARE DESIGN ENGINEER                                   |      1080 |
+| ACCOUNT MANAGER                                            |      1066 |
+| ACCOUNTANT                                                 |     14048 |
+| ADVISORY MANAGER                                           |      3255 |
+| ADVISORY SENIOR                                            |      5416 |
+| ADVISORY SENIOR ASSOCIATE                                  |      1332 |
+| ADVISORY STAFF                                             |      2413 |
+| ANALYST                                                    |     11751 |
+| APPLICATION DEVELOPER                                      |      7692 |
+| APPLICATION ENGINEER                                       |      1458 |
+| APPLICATION PROGRAMMER                                     |      1686 |
+| APPLICATIONS CONSULTANT                                    |      1180 |
+| APPLICATIONS DEVELOPER                                     |      3366 |
+| APPLICATIONS ENGINEER                                      |      1688 |
+| ARCHITECT                                                  |      4982 |
+| ARCHITECT LEVEL 2                                          |      2892 |
+| ARCHITECTURAL DESIGNER                                     |      2334 |
+| ASSISTANT PROFESSOR                                        |     25265 |
+| ASSISTANT RESEARCH SCIENTIST                               |      1103 |
+| ASSISTANT VICE PRESIDENT                                   |      2132 |
+| ASSOCIATE                                                  |     12502 |
+| ASSOCIATE ATTORNEY                                         |      1533 |
+| ASSOCIATE CONSULTANT                                       |      1350 |
+| ASSOCIATE CONSULTANT - US                                  |      4393 |
+| ASSOCIATE PROFESSOR                                        |      1441 |
+| ASSOCIATE RESEARCH SCIENTIST                               |      1400 |
+| ASSOCIATE SOFTWARE ENGINEER                                |      1215 |
+| ASSURANCE SENIOR                                           |      1607 |
+| ASSURANCE STAFF                                            |      2334 |
+| ATTORNEY                                                   |      1050 |
+| AUDIT ASSISTANT                                            |      1205 |
+| AUDIT SENIOR                                               |      1070 |
+| BUDGET ANALYST                                             |      1687 |
+| BUSINESS ANALYST                                           |     39681 |
+| BUSINESS DEVELOPMENT ANALYST                               |      1148 |
+| BUSINESS DEVELOPMENT MANAGER                               |      2345 |
+| BUSINESS DEVELOPMENT SPECIALIST                            |      1482 |
+| BUSINESS INTELLIGENCE ANALYST                              |      1972 |
+| BUSINESS OPERATIONS SPECIALIST                             |      1034 |
+| BUSINESS SYSTEM ANALYST                                    |      4435 |
+| BUSINESS SYSTEMS ANALYST                                   |     10110 |
+| BUSINESS TECHNOLOGY ANALYST                                |      2005 |
+| CHEMIST                                                    |      1380 |
+| CHIEF EXECUTIVE OFFICER                                    |      1095 |
+| CIVIL ENGINEER                                             |      2257 |
+| CLINICAL ASSISTANT PROFESSOR                               |      1281 |
+| CLINICAL FELLOW                                            |      1146 |
+| COMPONENT DESIGN ENGINEER                                  |      2851 |
+| COMPUTER PROGRAMMER                                        |     70570 |
+| COMPUTER PROGRAMMER / CONFIGURER 2                         |      1276 |
+| COMPUTER PROGRAMMER ANALYST                                |     13634 |
+| COMPUTER PROGRAMMER/ANALYST                                |      1122 |
+| COMPUTER PROGRAMMER/CONFIGURER 2                           |      6729 |
+| COMPUTER PROGRAMMER/CONFIGURER 3                           |      1145 |
+| COMPUTER PROGRAMMERS                                       |      4963 |
+| COMPUTER SOFTWARE ENGINEER                                 |      2684 |
+| COMPUTER SOFTWARE ENGINEER, APPLICATIONS                   |      4426 |
+| COMPUTER SPECIALIST                                        |      2175 |
+| COMPUTER SPECIALIST/SYSTEM SUPPORT AND DEVELOPMENT         |      1339 |
+| COMPUTER SPECIALIST/SYSTEM SUPPORT AND DEVELOPMENT ADMIN 2 |      1085 |
+| COMPUTER SPECIALIST/TESTING AND QUALITY ANALYST 2          |      3998 |
+| COMPUTER SYSTEM ANALYST                                    |      3753 |
+| COMPUTER SYSTEMS ANALYST                                   |     35086 |
+| COMPUTER SYSTEMS ANALYST 2                                 |      4031 |
+| COMPUTER SYSTEMS ANALYST 3                                 |      2170 |
+| COMPUTER SYSTEMS ANALYSTS                                  |      4728 |
+| COMPUTER SYSTEMS ENGINEER                                  |     11090 |
+| COMPUTER SYSTEMS ENGINEER/ARCHITECT                        |      2067 |
+| CONSULTANT                                                 |     23081 |
+| CONSULTANT - US                                            |      7426 |
+| CONSULTANT LEVEL 3                                         |      1171 |
+| SYSTEMS ENGINEER - US                                      |     10036 |
+| TAX SENIOR                                                 |      1838 |
+| TEACHER                                                    |      3576 |
+| TECHNICAL ANALYST                                          |      2932 |
+| TECHNICAL ARCHITECT                                        |      2908 |
+| TECHNICAL CONSULTANT                                       |      3420 |
+| TECHNICAL LEAD                                             |      5218 |
+| TECHNICAL MANAGER                                          |      1060 |
+| TECHNICAL PROJECT MANAGER                                  |      1052 |
+| TECHNICAL RECRUITER                                        |      1364 |
+| TECHNICAL SPECIALIST                                       |      1295 |
+| TECHNICAL SUPPORT ENGINEER                                 |      1230 |
+| TECHNICAL TEST LEAD - US                                   |      5374 |
+| TECHNOLOGY ANALYST - US                                    |     26055 |
+| TECHNOLOGY ARCHITECT - US                                  |      4707 |
+| TECHNOLOGY LEAD - US                                       |     28350 |
+| TEST ANALYST                                               |      1419 |
+| TEST ANALYST - US                                          |      4958 |
+| TEST CONSULTANT                                            |      1454 |
+| TEST ENGINEER                                              |      3936 |
+| TEST ENGINEER - US                                         |      2198 |
+| TEST ENGINEER LEVEL 1                                      |      1036 |
+| TEST ENGINEER LEVEL 2                                      |      2372 |
+| TEST LEAD                                                  |      1726 |
+| TEST SPECIALIST                                            |      1011 |
+| VALIDATION ENGINEER                                        |      1159 |
+| VICE PRESIDENT                                             |      3159 |
+| VISITING ASSISTANT PROFESSOR                               |      1311 |
+| WEB DEVELOPER                                              |      8024 |
+| PRINCIPAL CONSULTANT - US                                  |      1352 |
+| PRINCIPAL ENGINEER                                         |      1066 |
+| PRINCIPAL SOFTWARE ENGINEER                                |      2257 |
+| PROCESS ENGINEER                                           |      4377 |
++------------------------------------------------------------+-----------+
+618 rows in set (0.00 sec)
+
